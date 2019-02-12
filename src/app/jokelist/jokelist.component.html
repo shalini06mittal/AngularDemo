@@ -1,0 +1,10 @@
+<div class='container joke'>
+  <h1>Joke Of the Day :</h1>
+  <div *ngIf='jokes.length > 0'>
+      <div *ngFor='let j of jokes'>
+          <app-joke [joke]=j></app-joke>
+      </div>
+  </div>
+  </div>
+  
+  

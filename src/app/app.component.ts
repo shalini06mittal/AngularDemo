@@ -1,4 +1,4 @@
-import { Component ,ViewEncapsulation} from '@angular/core';
+import { Component ,ViewEncapsulation, OnInit,OnChanges,AfterViewInit,AfterViewChecked} from '@angular/core';
 import { nearer } from 'q';
 
 @Component({
@@ -15,7 +15,7 @@ import { nearer } from 'q';
 })
 
 //typescript
-export class AppComponent {
+export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChecked{
   title:string = 'Shalini';
   submitted:boolean = true;
   content ='see if its added';
@@ -24,6 +24,28 @@ export class AppComponent {
   style1 = 's1';
   style2 = 's2';
   name:string = 'Guest!!';
+  employee = {'name':"Shalini"};
+  constructor()//services are injected in the constructor
+  {
+    console.log("app component constructor");
+  }
+  //any calling of service for any long running op
+  ngOnInit()
+  {
+    console.log("app component oninit");
+  }
+  ngOnChanges()
+  {
+    console.log("app component onchanges");
+  }
+  ngAfterViewInit()
+  {
+    console.log("app component viewinit");
+  }
+  ngAfterViewChecked()
+  {
+    console.log("app component view checked");
+  }
   show(val:string)
   {
     console.log("show called");
@@ -31,7 +53,9 @@ export class AppComponent {
   }
   login(n:string)
   {
-    this.name = n;
+    //this.name = n;
+   console.log("name passed in login click "+n);
+    this.employee.name = n;
   }
   subscribed(data)
   {

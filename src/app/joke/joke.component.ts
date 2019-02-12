@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Joke} from '../model/Joke';
 @Component({
   selector: 'app-joke',
@@ -7,15 +7,13 @@ import {Joke} from '../model/Joke';
 })
 export class JokeComponent implements OnInit {
 
-  //joke:Joke;
-  joke:Joke[];
+  @Input() joke:Joke;
+  //joke:Joke[];
   constructor() { 
-    //this.joke=[];
-    this.joke = [
-      new Joke('Where did chickens go!!','To cross the roads'),
-      new Joke('Joke 2','Punchline 2'),
-      new Joke('Joke 3','Punchline 3'),
-    ];
+    this.joke=new Joke('','');
+   
+    console.log("joke component constructor");
+  
   }
 
   ngOnInit() {
@@ -23,6 +21,6 @@ export class JokeComponent implements OnInit {
   toggle(joke:Joke)
   {
     console.log(joke);
-    joke.toggle();
+    this.joke.toggle();
   }
 }

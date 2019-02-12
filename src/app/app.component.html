@@ -13,8 +13,10 @@
 <div [class]="style1">It uses class binding</div>
 <div [ngClass]="[style1,style2]">It uses class binding</div> -->
 
-<app-header [username]='name' (subs)='subscribed($event)' [emp]='employee'></app-header>
-<div class = 'container'>
+<app-header [username]='name' 
+(subs)='subscribed($event)'
+[emp]='employee'></app-header>
+<!-- <div class = 'container'>
         <form action="/action_page.php">
             <div class="form-group">
               <label for="name">Enter Name:</label>
@@ -22,5 +24,7 @@
             </div>         
             <button type="submit" (click)='login(n.value)' class="btn btn-default">Submit</button>
           </form>   
-</div>
-<app-joke ></app-joke>
+</div> -->
+<app-jokelist></app-jokelist>
+<!-- <div *ngIf='true'>This will be shown</div>
+<div *ngIf='false'>This will not be shown</div> -->

@@ -1,0 +1,13 @@
+<div class='container joke'>
+<h1>Joke Of the Day :</h1>
+<div *ngIf='joke.length > 0'>
+    <div *ngFor='let j of joke'>
+        <p>{{j?.setup}}</p>
+        <p [hidden]="j?.hide">{{j?.line}}</p>
+        <button (click)="toggle(j)">
+        Toggle PunchLine
+        </button>
+    </div>
+</div>
+</div>
+

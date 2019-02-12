@@ -1,0 +1,13 @@
+<div class='jumbotron text-center'>
+<h1>Welcome to The Joke Community!!!</h1>
+<h3>Welcome {{username}}</h3>
+<div class = 'container'>
+        <form action="/action_page.php">
+            <div class="form-group">
+              <label for="sub">Subscribe:</label>
+              <input type="checkbox" value="subscribe" class="form-control" id="sub" #s>
+            </div>      
+            <button type="submit" (click)='subscribe(s.checked)' class="btn btn-default">Submit</button>
+          </form>
+</div>
+</div>

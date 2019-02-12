@@ -1,0 +1,9 @@
+.joke{
+    background-color: burlywood;
+    padding: 10px;
+    text-align: center;
+}
+p{
+    text-decoration: overline;
+    padding: 10px;
+}

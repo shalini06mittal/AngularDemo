@@ -10,8 +10,8 @@ import { nearer } from 'q';
     p{color:red;}
   `]*/
  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.Native
+  styleUrls: ['./app.component.css']
+  // encapsulation: ViewEncapsulation.Native
 })
 
 //typescript
@@ -25,6 +25,29 @@ export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChe
   style2 = 's2';
   name:string = 'Guest!!';
   employee = {'name':"Shalini"};
+  people: any[] = [
+    {
+    "name": "Douglas Pace",
+    "age": 35,
+    "country": 'MARS'
+    },
+    {
+    "name": "Mcleod Mueller",
+    "age": 32,
+    "country": 'USA'
+    },
+    {
+    "name": "Aguirre Ellis",
+    "age": 34,
+    "country": 'UK'
+    },
+    {
+    "name": "Cook Tyson",
+    "age": 32,
+    "country": 'USA'
+    }
+    ];
+    
   constructor()//services are injected in the constructor
   {
     console.log("app component constructor");

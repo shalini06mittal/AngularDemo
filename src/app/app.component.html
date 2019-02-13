@@ -28,3 +28,21 @@
 <app-jokelist></app-jokelist>
 <!-- <div *ngIf='true'>This will be shown</div>
 <div *ngIf='false'>This will not be shown</div> -->
+<h1>Directive Demo</h1>
+<app-directive></app-directive>
+<ul><li *ngFor="let pno of [1,2,3,5,7,11,13,17];let i = index"> 
+    {{i}} : {{ pno }}	</li></ul>
+<h1>Demo on switch case</h1>
+<ul *ngFor="let person of people"  [ngSwitch]="person.country"> 
+    <li *ngSwitchCase="'UK'" class="text-success">
+      {{ person.name }} ({{ person.country }})	
+    </li>
+    <li *ngSwitchCase="'USA'"class="text-primary">
+      {{ person.name }} ({{ person.country }})
+    </li>
+    <li *ngSwitchDefault  class="text-warning">
+      {{ person.name }} ({{ person.country }})
+    </li>
+    </ul>
+    
+  

@@ -4,14 +4,18 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { JokeComponent } from './joke/joke.component';
 import { HeaderComponent } from './header/header.component';
-import { JokelistComponent } from './jokelist/jokelist.component'
+import { JokelistComponent } from './jokelist/jokelist.component';
+import { DirectiveComponent } from './directive/directive.component';
+import { HoverDirective } from './directive/hover.directive'
 //decorators
 @NgModule({
   declarations: [
     AppComponent,
     JokeComponent,
     HeaderComponent,
-    JokelistComponent
+    JokelistComponent,
+    DirectiveComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,FormsModule

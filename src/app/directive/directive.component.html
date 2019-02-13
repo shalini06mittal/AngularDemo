@@ -1,0 +1,8 @@
+<div class='container text-center'>
+<select [(ngModel)]='color' >
+  <option [value]='c'  *ngFor='let c of colors'>{{c}}</option>
+</select>
+<!-- <div>{{color}}</div> -->
+<!-- <h3 appHover>See the directive as an attribute used</h3> -->
+<h3 [appHover]='color'>See the directive as an attribute used</h3>
+</div>

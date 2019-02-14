@@ -3,6 +3,9 @@
   <option [value]='c'  *ngFor='let c of colors'>{{c}}</option>
 </select>
 <!-- <div>{{color}}</div> -->
-<!-- <h3 appHover>See the directive as an attribute used</h3> -->
-<h3 [appHover]='color'>See the directive as an attribute used</h3>
+<div class='dec' [appHover]='color'>
+    <h3>Host Binding Demo!!</h3>
+  <p class='c1' style="display:none;">See the directive as an attribute used</p>
+  
+</div>
 </div>

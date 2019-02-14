@@ -6,7 +6,8 @@ import { JokeComponent } from './joke/joke.component';
 import { HeaderComponent } from './header/header.component';
 import { JokelistComponent } from './jokelist/jokelist.component';
 import { DirectiveComponent } from './directive/directive.component';
-import { HoverDirective } from './directive/hover.directive'
+import { HoverDirective } from './directive/hover.directive';
+import { JokeDirective } from './joke/joke.directive'
 //decorators
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HoverDirective } from './directive/hover.directive'
     HeaderComponent,
     JokelistComponent,
     DirectiveComponent,
-    HoverDirective
+    HoverDirective,
+    JokeDirective
   ],
   imports: [
     BrowserModule,FormsModule

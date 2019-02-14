@@ -1,9 +1,13 @@
-<div class='container joke'>
-
+<!-- <div class='container joke'>
         <p>{{joke?.setup}}</p>
         <p [hidden]="joke?.hide">{{joke?.line}}</p>
         <button (click)="toggle(joke)">
         Toggle PunchLine
         </button>
-</div>
+</div> -->
 
+<div class="card" appJoke>
+        <p>{{joke?.setup}}</p>
+        <p class='card-text' [style.display]="'none'">{{joke?.line}}</p>
+</div>
+                  

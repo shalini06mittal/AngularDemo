@@ -10,7 +10,8 @@
 // }
 export class Joke{
    
-    constructor(public setup:string,public line:string,public hide?:boolean)
+    constructor(public setup:string,public line:string,public category:string,
+        public hide?:boolean)
     {    
         this.hide = true; 
     }

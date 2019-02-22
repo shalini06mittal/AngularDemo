@@ -10,7 +10,7 @@ export class JokeComponent implements OnInit {
   @Input() joke:Joke;
   //joke:Joke[];
   constructor() { 
-    this.joke=new Joke('','');
+    this.joke=new Joke('','','');
    
     console.log("joke component constructor");
   

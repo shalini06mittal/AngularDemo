@@ -10,7 +10,9 @@ import { HoverDirective } from './directive/hover.directive';
 import { JokeDirective } from './joke/joke.directive';
 import { DemoPipe } from './pipes/demo.pipe'
 import { registerLocaleData } from '@angular/common'; 
-import localeFr from '@angular/common/locales/fr'; 
+import localeFr from '@angular/common/locales/fr';
+import { EmpPipe } from './pipes/emp.pipe';
+import { JokeformComponent } from './jokeform/jokeform.component'; 
 registerLocaleData(localeFr, 'fr');
 
 //decorators
@@ -23,7 +25,9 @@ registerLocaleData(localeFr, 'fr');
     DirectiveComponent,
     HoverDirective,
     JokeDirective,
-    DemoPipe
+    DemoPipe,
+    EmpPipe,
+    JokeformComponent
   ],
   imports: [
     BrowserModule,FormsModule

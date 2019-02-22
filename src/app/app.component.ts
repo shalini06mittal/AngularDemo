@@ -48,11 +48,28 @@ export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChe
     "country": 'USA'
     }
     ];
-    
+    //object
+    employees:any[];
+    cities = ['Mumbai','Pune','Chennai'];
+    city:string='Mumbai';
   constructor()//services are injected in the constructor
   {
     console.log("app component constructor");
+    this.employees=[
+      {'name':'shalini',city:'Mumbai'},
+      {'name':'manish',city:'Pune'},
+      {'name':'Anju',city:'Chennai'},
+        ];
   }
+  addEmp(name: string) { 
+    name = name.trim(); 
+    if (!name) { return; }
+    let emp = {name, city: this.city}; 
+    //this.employees=[];
+    this.employees.push(emp); 
+    console.log(this.employees);
+    } 
+    
   //any calling of service for any long running op
   ngOnInit()
   {

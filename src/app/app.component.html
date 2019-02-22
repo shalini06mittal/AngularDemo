@@ -13,6 +13,7 @@
 <div [class]="style1">It uses class binding</div>
 <div [ngClass]="[style1,style2]">It uses class binding</div> -->
 
+
 <app-header [username]='name' 
 (subs)='subscribed($event)'
 [emp]='employee'></app-header>
@@ -25,7 +26,7 @@
             <button type="submit" (click)='login(n.value)' class="btn btn-default">Submit</button>
           </form>   
 </div> -->
-<app-jokelist></app-jokelist>
+<!-- <app-jokelist></app-jokelist> -->
 <!-- <div *ngIf='true'>This will be shown</div>
 <div *ngIf='false'>This will not be shown</div> -->
 <!-- <h1>Directive Demo</h1>
@@ -45,4 +46,42 @@
     </li>
     </ul>
      -->
-  
+     <div class="container">
+<h1>Pipe Demo!!</h1>
+<p>{{birthday}}</p>
+<p ngNonBindable>{{birthday | date:'medium'}}</p>
+<p>{{birthday | date:'medium'}}</p>
+<p ngNonBindable>{{3245.686886 | number:5.2-5}}</p>
+<p>{{3245.686886 | number:'5.2-5'}}</p>
+<p>{{3245.686886 | number:'5.2-5':'fr'}}</p>
+<p ngNonBindable>{{ 1234.56 | currency:'GBP' }}
+</p>
+<p>{{ 1234.56 | currency:'GBP' }}</p>
+<p>{{employee}}</p>
+<p ngNonBindable>{{employee | json}}</p>
+<p>{{employee | json}}</p>
+<p ngNonBindable>{{"SHALINI" | lowercase}}</p>
+<p>{{"SHALINI" | lowercase}}</p>
+<p ngNonBindable>{{"shalni" | uppercase}}</p>
+<p>{{"shalini" | uppercase}}</p>
+<p ngNonBindable>{{"shalni" | titlecase}}</p>
+<p>{{"shalini" | titlecase}}</p>
+<p ngNonBindable>{{ 0.123456 | percent }}</p>
+   	 <p>{{ 0.123456 | percent }}</p>	//12.346%
+
+   	 <p ngNonBindable>{{ 0.123456 | percent: '2.1-2' }}</p> 
+   	 <p>{{ 0.123456 | percent: '2.1-2' }}</p>	//12.35%
+
+    	<p ngNonBindable>{{ 42 | percent: '10.4-4' }}</p>
+      <p>{{ 0.123456 | percent : "10.4-4" }}</p>
+      
+    <p ngNonBindable>{{"Welcome Hello" | slice:0:5}}</p>
+    <p>{{"Welcome Hello" | slice:7}}</p>
+    <p ngNonBindable>{{[1,2,3,4,5,6,7,8,9,10] | slice:7}}</p>
+    <p>{{[1,2,3,4,5,6,7,8,9,10] | slice:7}}</p>
+    <p ngNonBindable>{{[1,2,3,4,5,6,7,8,9,10] | slice:-7:-3}}</p>
+    <p>{{[1,2,3,4,5,6,7,8,9,10] | slice:-7:-3}}</p>
+    <p ngNonBindable>{{2 | square}}</p>
+    <p>{{2 | square:3:5}}</p>
+
+</div>

@@ -25,6 +25,7 @@ export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChe
   style2 = 's2';
   name:string = 'Guest!!';
   employee = {'name':"Shalini"};
+  birthday = new Date(1988, 3, 15);
   people: any[] = [
     {
     "name": "Douglas Pace",

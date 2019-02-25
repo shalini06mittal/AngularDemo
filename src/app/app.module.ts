@@ -12,7 +12,8 @@ import { DemoPipe } from './pipes/demo.pipe'
 import { registerLocaleData } from '@angular/common'; 
 import localeFr from '@angular/common/locales/fr';
 import { EmpPipe } from './pipes/emp.pipe';
-import { JokeformComponent } from './jokeform/jokeform.component'; 
+import { JokeformComponent } from './jokeform/jokeform.component';
+import { JokePipe } from './jokelist/joke.pipe'; 
 registerLocaleData(localeFr, 'fr');
 
 //decorators
@@ -27,7 +28,8 @@ registerLocaleData(localeFr, 'fr');
     JokeDirective,
     DemoPipe,
     EmpPipe,
-    JokeformComponent
+    JokeformComponent,
+    JokePipe
   ],
   imports: [
     BrowserModule,FormsModule

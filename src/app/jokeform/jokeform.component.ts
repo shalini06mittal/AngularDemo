@@ -9,14 +9,18 @@ import {categories} from '../model/jokelist';
 export class JokeformComponent implements OnInit {
 
   joke:Joke;
+  
   categories:string[];
   hasError:boolean=true;
   submitted = false;
   constructor() { 
   this.categories = categories;
-  this.joke = new Joke('','to pass','humour');
+  this.joke = new Joke('','to pass','');
   }
-  
+   submit(jf)
+   {
+     console.log(jf)
+   }
 
   ngOnInit() {
   }

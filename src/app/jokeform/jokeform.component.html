@@ -1,22 +1,36 @@
 <div class="card card-block">
   <h4 class="card-title">Create Joke</h4> 
-  <form>
+  <p>JOke form :{{jokeform.value | json}}</p>
+  <p>Joke : {{joke | json}}</p>
+  <form #jokeform='ngForm'>
   <div class="form-group">
-  <input type="text" class="form-control" placeholder="Enter the setup" required/>
+  <input  name='setup'  [(ngModel)]='joke.setup'
+          type="text" 
+          class="form-control"
+          [class.is-invalid]='s1.invalid && s1.touched' 
+          placeholder="Enter the setup" 
+          #s1='ngModel'
+          minlength="5"
+          required/>
+  </div>
+ <div *ngIf='s1.invalid && s1.touched'>
+    <small class='text-danger' *ngIf='s1.errors.required'>Name required </small>
+    <small class='text-danger' *ngIf='s1.errors.minlength'>min 5 charaters</small>
+ </div>
+  <div class="form-group"> 
+  <input type="text" class="form-control" [(ngModel)]='joke.line'
+  placeholder="Enter the punchline" name='line'>  
   </div>
   <div class="form-group"> 
-  <input type="text" class="form-control"
-  placeholder="Enter the punchline">  
-  </div>
-  <div class="form-group"> 
-    <select >
-    <option value="default">Select a Category</option>
+    <select name='cat' [(ngModel)] = 'joke.category'>
+        <option value="">Select</option>
     <option *ngFor="let category of categories"
-    value="{{category}}">{{category}}</option>
+    [value]="category">{{category}}</option>
     </select>
     </div>    
-  <button type="submit"
+  <button type="submit" (click)='submit(jokeform.value)'
   class="btn btn-primary">Create</button>
+  
   </form>
   </div>
   

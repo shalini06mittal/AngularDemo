@@ -15,7 +15,7 @@ import { nearer } from 'q';
 })
 
 //typescript
-export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChecked{
+export class AppComponent {
   title:string = 'Shalini';
   submitted:boolean = true;
   content ='see if its added';
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChe
     city:string='Mumbai';
   constructor()//services are injected in the constructor
   {
-    console.log("app component constructor");
+    //console.log("app component constructor");
     this.employees=[
       {'name':'shalini',city:'Mumbai'},
       {'name':'manish',city:'Pune'},
@@ -67,26 +67,26 @@ export class AppComponent implements OnInit,OnChanges,AfterViewInit,AfterViewChe
     let emp = {name, city: this.city}; 
     //this.employees=[];
     this.employees.push(emp); 
-    console.log(this.employees);
+   // console.log(this.employees);
     } 
     
   //any calling of service for any long running op
-  ngOnInit()
-  {
-    console.log("app component oninit");
-  }
-  ngOnChanges()
-  {
-    console.log("app component onchanges");
-  }
-  ngAfterViewInit()
-  {
-    console.log("app component viewinit");
-  }
-  ngAfterViewChecked()
-  {
-    console.log("app component view checked");
-  }
+  // ngOnInit()
+  // {
+  //   console.log("app component oninit");
+  // }
+  // ngOnChanges()
+  // {
+  //   console.log("app component onchanges");
+  // }
+  // ngAfterViewInit()
+  // {
+  //   console.log("app component viewinit");
+  // }
+  // ngAfterViewChecked()
+  // {
+  //   console.log("app component view checked");
+  // }
   show(val:string)
   {
     console.log("show called");

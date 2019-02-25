@@ -7,4 +7,4 @@ new Joke('Why did the baby elephant need a new suitcase for her vacation?','She 
 new Joke('Can you name the only ant that can count...',
 'Accountant','humor')
 ];
-export const categories=['humour','birthday','Animal'];
+export const categories=['humor','birthday','Animal'];

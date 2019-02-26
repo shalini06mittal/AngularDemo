@@ -27,8 +27,8 @@
           </form>   
 </div> -->
 <div class="container">
-<app-jokeform></app-jokeform>
-<app-jokelist></app-jokelist>
+<app-jokeform (jokeChange)='addJoke($event)'></app-jokeform>
+<app-jokelist [joke]='joke'></app-jokelist>
 </div>
 <!-- <div *ngIf='true'>This will be shown</div>
 <div *ngIf='false'>This will not be shown</div> -->

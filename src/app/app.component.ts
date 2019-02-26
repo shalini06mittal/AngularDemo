@@ -1,5 +1,5 @@
 import { Component ,ViewEncapsulation, OnInit,OnChanges,AfterViewInit,AfterViewChecked} from '@angular/core';
-import { nearer } from 'q';
+import {Joke} from './model/Joke';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +26,7 @@ export class AppComponent {
   name:string = 'Guest!!';
   employee = {'name':"Shalini"};
   birthday = new Date(1988, 3, 15);
+
   people: any[] = [
     {
     "name": "Douglas Pace",
@@ -101,5 +102,11 @@ export class AppComponent {
   subscribed(data)
   {
     alert('subscribed data '+data);
+  }
+  joke:Joke;
+  addJoke(data){
+    console.log('add joke');
+    console.log(data);
+    this.joke = data;
   }
 }

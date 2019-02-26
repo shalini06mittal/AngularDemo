@@ -8,9 +8,9 @@ import { Joke } from '../model/Joke';
 export class JokePipe implements PipeTransform {
 
   transform(value: Joke[], category?: string): any {
-   
     console.log('category '+category);
-  
+    if(category === 'all')
+    return value;
     return value.filter( (v) => v.category===category);
   }
 

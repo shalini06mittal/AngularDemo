@@ -1,8 +1,8 @@
 <div class="card card-block">
   <h4 class="card-title">Create Joke</h4> 
-  <p>JOke form :{{jokeform.value | json}}</p>
-  <p>Joke : {{joke | json}}</p>
-  <form #jokeform='ngForm'>
+  <!-- <p>JOke form :{{jokeform.value | json}}</p>
+  <p>Joke : {{joke | json}}</p> -->
+  <form #jokeform='ngForm' (ngSubmit)='submit(jokeform.value)'>
   <div class="form-group">
   <input  name='setup'  [(ngModel)]='joke.setup'
           type="text" 
@@ -12,24 +12,30 @@
           #s1='ngModel'
           minlength="5"
           required/>
+          <div *ngIf='s1.invalid && s1.touched'>
+              <small class='text-danger' *ngIf='s1.errors.required'>Name required </small>
+              <small class='text-danger' *ngIf='s1.errors.minlength'>min 5 charaters</small>
+           </div>
   </div>
- <div *ngIf='s1.invalid && s1.touched'>
-    <small class='text-danger' *ngIf='s1.errors.required'>Name required </small>
-    <small class='text-danger' *ngIf='s1.errors.minlength'>min 5 charaters</small>
- </div>
+
   <div class="form-group"> 
   <input type="text" class="form-control" [(ngModel)]='joke.line'
-  placeholder="Enter the punchline" name='line'>  
+  placeholder="Enter the punchline" name='line' #line='ngModel' required> 
+  <div *ngIf='line.invalid && line.touched'>
+      <small class='text-danger' *ngIf='line.errors.required'>punchline required </small>
+   </div>  
   </div>
   <div class="form-group"> 
-    <select name='cat' [(ngModel)] = 'joke.category'>
+    <select name='category' [(ngModel)] = 'joke.category'>
         <option value="">Select</option>
     <option *ngFor="let category of categories"
     [value]="category">{{category}}</option>
     </select>
     </div>    
-  <button type="submit" (click)='submit(jokeform.value)'
-  class="btn btn-primary">Create</button>
+  <button type="submit" [disabled]='jokeform.invalid' 
+  class="btn btn-primary"
+  
+  >Create</button>
   
   </form>
   </div>

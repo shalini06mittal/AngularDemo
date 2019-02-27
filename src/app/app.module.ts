@@ -14,6 +14,8 @@ import localeFr from '@angular/common/locales/fr';
 import { EmpPipe } from './pipes/emp.pipe';
 import { JokeformComponent } from './jokeform/jokeform.component';
 import { JokePipe } from './jokelist/joke.pipe'; 
+import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveComponent } from './reactive/reactive.component'
 registerLocaleData(localeFr, 'fr');
 
 //decorators
@@ -29,10 +31,11 @@ registerLocaleData(localeFr, 'fr');
     DemoPipe,
     EmpPipe,
     JokeformComponent,
-    JokePipe
+    JokePipe,
+    ReactiveComponent
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

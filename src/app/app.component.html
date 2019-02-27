@@ -17,6 +17,7 @@
 <app-header [username]='name' 
 (subs)='subscribed($event)'
 [emp]='employee'></app-header>
+<app-reactive></app-reactive>
 <!-- <div class = 'container'>
         <form action="/action_page.php">
             <div class="form-group">
@@ -26,10 +27,10 @@
             <button type="submit" (click)='login(n.value)' class="btn btn-default">Submit</button>
           </form>   
 </div> -->
-<div class="container">
+<!-- <div class="container">
 <app-jokeform (jokeChange)='addJoke($event)'></app-jokeform>
 <app-jokelist [joke]='joke'></app-jokelist>
-</div>
+</div> -->
 <!-- <div *ngIf='true'>This will be shown</div>
 <div *ngIf='false'>This will not be shown</div> -->
 <!-- <h1>Directive Demo</h1>

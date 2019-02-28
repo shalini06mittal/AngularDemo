@@ -1,5 +1,6 @@
 import { Component ,ViewEncapsulation, OnInit,OnChanges,AfterViewInit,AfterViewChecked} from '@angular/core';
 import {Joke} from './model/Joke';
+import { MyService } from './service/my.service';
 
 @Component({
   selector: 'app-root',
@@ -53,7 +54,7 @@ export class AppComponent {
     employees:any[];
     cities = ['Mumbai','Pune','Chennai'];
     city:string='Mumbai';
-  constructor()//services are injected in the constructor
+  constructor(private service:MyService)//services are injected in the constructor
   {
     //console.log("app component constructor");
     this.employees=[

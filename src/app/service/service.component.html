@@ -1,0 +1,16 @@
+<!-- <div class="container">
+<h1>Parent Service</h1>
+<div>
+  <p>Parent : {{service.value}}</p>
+</div>
+</div> -->
+
+<div class="parent"><p>Parent</p>
+  <form novalidate>
+        <div class="form-group">
+        <input type="text"  class="form-control"
+      name="value"  [(ngModel)]="service.value">
+      </div>
+  </form>
+  <app-child></app-child>
+ </div>

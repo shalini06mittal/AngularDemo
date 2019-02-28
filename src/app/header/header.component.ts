@@ -1,4 +1,5 @@
 import { Component, OnInit,Input, EventEmitter, Output,OnChanges,DoCheck} from '@angular/core';
+import { MyService } from '../service/my.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent{
   //json
   @Input() emp = {'name':'temp'};
   @Output() subs : EventEmitter<string> = new  EventEmitter();
-  constructor() { 
+  constructor(private service:MyService) { 
     // console.log("header component constructor "+this.username);
     // console.log("header component constructor "+this.emp.name);
   }

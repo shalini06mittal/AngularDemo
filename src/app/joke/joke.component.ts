@@ -18,9 +18,9 @@ export class JokeComponent implements OnInit {
 
   ngOnInit() {
   }
-  toggle(joke:Joke)
+  toggle()
   {
-    console.log(joke);
+    console.log(this.joke);
     this.joke.toggle();
   }
 }

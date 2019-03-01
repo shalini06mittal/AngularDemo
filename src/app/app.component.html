@@ -13,21 +13,15 @@
 <div [class]="style1">It uses class binding</div>
 <div [ngClass]="[style1,style2]">It uses class binding</div> -->
 
-<app-header [username]='name' 
-(subs)='subscribed($event)'
-[emp]='employee'></app-header>
-<div>
-    <form novalidate>
-              <div class="form-group">
-              <input type="text"  class="form-control"
-            name="value"  [(ngModel)]="service.value">
-            </div>
-        </form>
-  <p>App Component : {{service.value}}</p>
+<app-header ></app-header>
+<app-jokeform></app-jokeform>
+<app-jokelist></app-jokelist>
+<div class="jumbotron">
+  <button (click)='get()'>Get All Jokes</button>
+  <button (click)='post()'>Add Joke</button>
+  <button (click)='put()'>Edit Jokes</button>
+  <button (click)='delete()'>Delete Jokes</button>
 </div>
-
-<app-service></app-service><br>
-<app-service></app-service>
 <!-- <app-reactive></app-reactive> -->
 <!-- <div class = 'container'>
         <form action="/action_page.php">

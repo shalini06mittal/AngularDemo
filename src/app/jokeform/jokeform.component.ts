@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Joke} from '../model/Joke';
 import {categories} from '../model/jokelist';
+import { JokeService } from '../service/joke.service';
 
 @Component({
   selector: 'app-jokeform',
@@ -9,12 +10,12 @@ import {categories} from '../model/jokelist';
 })
 export class JokeformComponent implements OnInit {
   joke:Joke;
-  @Output() jokeChange:EventEmitter<Joke> = new EventEmitter();
+  //@Output() jokeChange:EventEmitter<Joke> = new EventEmitter();
   categories:string[];
   hasError:boolean=true;
   submitted = false;
  
-  constructor() { 
+  constructor(private service:JokeService) { 
   this.categories = categories;
   this.joke = new Joke('','','');
   
@@ -23,7 +24,11 @@ export class JokeformComponent implements OnInit {
    {   
      console.log(jf);
      this.joke = jf;
-     this.jokeChange.emit(this.joke); 
+     console.log("form submit");
+     console.log(this.joke);
+     //this.service.addJoke(jf);//{setup,line,category,id}
+     this.service.addJoke(new Joke(jf.setup,jf.line,
+      jf.category));
    }
   ngOnInit() {
     

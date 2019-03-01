@@ -18,7 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ServiceComponent } from './service/service.component';
 import { ChildComponent } from './service/child.component';
-
+import {HttpClientModule} from '@angular/common/http';
 registerLocaleData(localeFr, 'fr');
 
 //decorators
@@ -40,7 +40,7 @@ registerLocaleData(localeFr, 'fr');
     ChildComponent,
   ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule
+    BrowserModule,FormsModule,ReactiveFormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

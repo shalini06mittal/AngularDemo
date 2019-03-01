@@ -5,10 +5,22 @@
         Toggle PunchLine
         </button>
 </div> -->
-
+<!-- 
 <div class="card" appJoke>
         <p>{{joke.category}}</p>
         <p>{{joke?.setup}}</p>
         <p class='card-text' [style.display]="'none'">{{joke?.line}}</p>
-</div>
+</div> -->
+
+<div class = "card">
+        <p>{{joke?.setup}}</p>
+        <p class='card-text' [hidden]="joke?.hide">{{joke?.line}}</p>
+        
+        <button (click)="toggle()">
+            Toggle PunchLine
+          </button>
+          <div style='margin-bottom: 10px;'></div>
+          <ng-content></ng-content>
+          <div style='margin-bottom: 10px;'></div>
+        </div>
                   

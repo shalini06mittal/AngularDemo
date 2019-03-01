@@ -1,6 +1,7 @@
 import { Component ,ViewEncapsulation, OnInit,OnChanges,AfterViewInit,AfterViewChecked} from '@angular/core';
 import {Joke} from './model/Joke';
 import { MyService } from './service/my.service';
+import { HttpdemoService } from './service/httpdemo.service';
 
 @Component({
   selector: 'app-root',
@@ -54,7 +55,7 @@ export class AppComponent {
     employees:any[];
     cities = ['Mumbai','Pune','Chennai'];
     city:string='Mumbai';
-  constructor(private service:MyService)//services are injected in the constructor
+  constructor(private service:HttpdemoService)//services are injected in the constructor
   {
     //console.log("app component constructor");
     this.employees=[
@@ -104,10 +105,34 @@ export class AppComponent {
   {
     alert('subscribed data '+data);
   }
-  joke:Joke;
-  addJoke(data){
-    console.log('add joke');
-    console.log(data);
-    this.joke = data;
+  get()
+  {
+      this.service.doGet().subscribe(
+        (data)=>{
+        console.log(data)
+      },
+      (err)=>{
+        console.log("error");
+        console.log(err);
+      }
+  );
   }
+  post()
+  {
+    this.service.doPost(new Joke('setup from angular','new line','Animal'));
+  }
+  put()
+  {
+    this.service.doEdit(new Joke('setup from angular updated','new line updated','Animal',7));
+  }
+  delete()
+  {
+    this.service.doDelete(4);
+  }
+  // joke:Joke;
+  // addJoke(data){
+  //   console.log('add joke');
+  //   console.log(data);
+  //   this.joke = data;
+  // }
 }
